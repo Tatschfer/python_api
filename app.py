@@ -80,8 +80,9 @@ def include_new_product():
 def delete_product(id):
     for indice, product in enumerate(products):
         if product.get('id') == id:
-            del product[indice]
-            return jsonify(products)
+            del products[indice]
+
+    return jsonify(products)
 
 
 app.run(port=5000, host='localhost', debug=True)
